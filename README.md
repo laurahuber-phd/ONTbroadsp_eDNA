@@ -26,7 +26,7 @@ While indexing barcodes were removed during demultiplexing, the primer sequences
 # Step 2: Cluster reads into consensus sequences   
 
 ## Cluster by similarity   
-Reads are first grouped using CD-HIT based on a 95% similarity threshold. Groups of 10 or more sequences are selected for error correction.  
+Reads are first grouped using cd-hit based on a 95% similarity threshold. Groups of 10 or more sequences are selected for error correction.  
 
 ## Map reads onto each other    
 Minimap2 is used to align sequences within a cluster and generate a file of alignments that will be used for error correction.  
@@ -37,5 +37,13 @@ Racon is used to polish the consensus sequences and return a single 'consensus s
 
 All intermediate files are then zipped.  
 
-## Second mapping  
-Consensus sequences are then run through cd-hit again with a higher percent similarity threshold.   
+## Second clustering step  
+Consensus sequences are then run through cd-hit again with a 98% similarity threshold.  
+
+## Taxonomic assignment  
+A feature table is generated in R4.0.0 using the consensus sequences. Then, consensus sequences are imported into qiime2 and assigned taxonomy using classify-consensus-blast
+
+# Limitations  
+This was built for the R9.4 flow-cells, which had an estimated 5% error rate.  
+Similarity threshold and cluster size were selected specifically for the dataset used in Huber et al. 2026, and can be modified to reflect the user's data  
+
