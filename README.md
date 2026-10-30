@@ -1,6 +1,10 @@
 # ONTbroadsp_eDNA
 
-Data and scripts needed to process environmental DNA metabarcoding output from Oxford Nanopore Technology sequencing, used in the manuscript by Huber et al, 2025 (doi: 10.3354/meps15093). These scripts were run on a high-performance computing cluster.
+Data and scripts needed to process environmental DNA metabarcoding output from Oxford Nanopore Technology sequencing, used in the following manuscript:   
+Huber, L. A., Wilbur, A. E., Silliman, B. R., & Schultz, T. F. (2026). Comparison of biological communities associated with oyster aquaculture and oyster reefs using environmental DNA metabarcoding and Nanopore sequencing. Marine Ecology Progress Series. https://doi.org/10.3354/meps15093  
+
+
+These scripts were run on a high-performance computing cluster.
 
 This workflow starts with the output from GridION R9.4 flow cell runs. Reads were demultiplexed locally with MinKNOW v.21.05.20, equipped with Guppy v5.0.13 using the high-accuracy basecalling model and a quality minimum Q-score cutoff of 9. 
 
